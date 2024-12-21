@@ -1,1 +1,1 @@
-# need to add databse
+sqlite3 library_management.db < library_management.sql
