@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Book</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+    <h1>Add a New Book</h1>
+
+    {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            <ul>
+                {% for category, message in messages %}
+                    <li class="{{ category }}">{{ message }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+    {% endwith %}
+
+    <form method="POST">
+        <div>
+            <label for="title">Title:</label>
+            <input type="text" id="title" name="title" required placeholder="Enter book title">
+        </div>
+        <div>
+            <label for="author">Author:</label>
+            <input type="text" id="author" name="author" required placeholder="Enter author name">
+        </div>
+        <div>
+            <label for="isbn">ISBN:</label>
+            <input type="text" id="isbn" name="isbn" required placeholder="Enter ISBN">
+        </div>
+        <div>
+            <label for="available">Available:</label>
+            <input type="number" id="available" name="available" min="0" placeholder="Enter available quantity (default: 1)">
+        </div>
+        <button type="submit">Add Book</button>
+    </form>
+
+    <br>
+    <a href="/librarian_dashboard">Back to Dashboard</a>
+</body>
+</html>
