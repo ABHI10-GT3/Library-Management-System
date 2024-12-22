@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Return Book</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+    <h1>Return a Book</h1>
+    
+    {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            <ul>
+                {% for category, message in messages %}
+                    <li class="{{ category }}">{{ message }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+    {% endwith %}
+    
+    {% if borrowed_books %}
+        <form method="POST">
+            <label for="book_id">Select Book to Return:</label>
+            <select name="book_id" required>
+                {% for book in borrowed_books %}
+                    <option value="{{ book[1] }}">{{ book[2] }} by {{ book[3] }}</option>
+                {% endfor %}
+            </select>
+
+            <label for="borrow_id">Borrow ID:</label>
+            <select name="borrow_id" required>
+                {% for book in borrowed_books %}
+                    <option value="{{ book[0] }}">{{ book[0] }}</option>
+                {% endfor %}
+            </select>
+            
+            <br><br>
+            <button type="submit">Return Book</button>
+        </form>
+    {% else %}
+        <p>No books to return.</p>
+    {% endif %}
+    
+    <br>
+    <a href="/user_dashboard">Back to Dashboard</a>
+</body>
+</html>

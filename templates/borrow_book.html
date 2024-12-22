@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Borrow Book</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+    <h1>Borrow a Book</h1>
+    
+    {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            <ul>
+                {% for category, message in messages %}
+                    <li class="{{ category }}">{{ message }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+    {% endwith %}
+
+    <form method="POST">
+        <label for="book_id">Select Book:</label>
+        <select name="book_id" id="book_id" required>
+            {% for book in books %}
+                <option value="{{ book[0] }}">{{ book[1] }} by {{ book[2] }}</option>
+            {% endfor %}
+        </select>
+        <br>
+
+        <label for="due_date">Due Date:</label>
+        <input type="date" name="due_date" id="due_date" required>
+        <br>
+
+        <button type="submit">Borrow Book</button>
+    </form>
+
+    <br>
+    <a href="/user_dashboard">Back to Dashboard</a>
+</body>
+</html>
