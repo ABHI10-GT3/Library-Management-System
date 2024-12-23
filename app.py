@@ -35,8 +35,8 @@ def librarian_login():
             session['librarian_id'] = librarian[0]
             # flash('Logged in successfully!', 'success')
             return redirect('/librarian_dashboard')
-        # else:
-        #     # flash('Invalid credentials!', 'danger')
+        else:
+            flash('Invalid credentials!', 'danger')
     return render_template('librarian_login.html')
 
 # Librarian Dashboard
@@ -74,7 +74,7 @@ def add_book():
                     # flash('Book added successfully!', 'success')
                 except Exception as e:
                     mysql.connection.rollback()
-                    # flash(f'Error adding book: {e}', 'danger')
+                    flash(f'Error adding book: {e}', 'danger')
 
             cur.close()
             return redirect('/librarian_dashboard')  # Redirect to dashboard or any appropriate page after adding
@@ -147,7 +147,7 @@ def manage_users():
                 existing_user['borrowed_books'].append(borrowed_book)
 
         # Debug: print the organized data for users
-        # print("Organized Users Data:", users)
+        print("Organized Users Data:", users)
 
         return render_template('manage_users.html', users=users)
 
@@ -176,7 +176,7 @@ def user_login():
 
         if user and user[3] == password:
             session['user_id'] = user[0]
-            # flash('Logged in successfully!', 'success')
+            flash('Logged in successfully!', 'success')
             return redirect('/user_dashboard')
         else:
             flash('Invalid credentials!', 'danger')
@@ -275,7 +275,7 @@ def register():
                     (name, email, hashed_password))
         mysql.connection.commit()
         cur.close()
-        # flash('Registration successful! Please log in.', 'success')
+        flash('Registration successful! Please log in.', 'success')
         return redirect('/user_login')
 
     return render_template('register.html')
@@ -312,7 +312,7 @@ def return_book():
                 """, [book_id])
 
                 mysql.connection.commit()
-                # flash('Book returned successfully!', 'success')
+                flash('Book returned successfully!', 'success')
             else:
                 flash('Invalid book return request or book is already returned.', 'danger')
 
