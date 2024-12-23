@@ -5,24 +5,168 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Librarian Dashboard</title>
     <link rel="stylesheet" href="/static/css/style.css">
+    <style>
+        /* Reset default styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: url('/static/images/librarian-bg.png') no-repeat center center/cover;
+            background-attachment: fixed;
+            color: white;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Header Styles */
+        header {
+            background: rgba(0, 0, 0, 0.7);
+            color: rgb(255, 255, 255);
+            padding: 30px 0;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 3.5em;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 20px;
+            color: #f9d342;
+        }
+
+        /* Navigation Bar Styles */
+        nav {
+            background: rgba(0, 0, 0, 0.8);
+            text-align: center;
+            padding: 15px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 20px;
+            font-size: 1.2em;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #f39c12;
+        }
+
+        /* Main Content Area */
+        main {
+            padding: 50px 20px;
+            background: rgba(0, 0, 0, 0.6);
+            margin-top: 30px;
+            border-radius: 15px;
+            max-width: 1000px;
+            margin: 30px auto;
+            text-align: center;
+        }
+
+        main h1 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+
+        main p {
+            font-size: 1.2em;
+            max-width: 900px;
+            margin: 0 auto 30px;
+            color: #ddd;
+        }
+
+        /* Button/Links in Main Section */
+        .dashboard-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 20px;
+        }
+
+        .dashboard-buttons a {
+            background: #f9d342;
+            padding: 15px 30px;
+            color: rgb(0, 0, 0);
+            font-size: 1.1em;
+            text-decoration: none;
+            border-radius: 5px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            transition: background 0.3s ease;
+        }
+
+        .dashboard-buttons a:hover {
+            background: #f39c12;
+        }
+
+        /* Footer Styling */
+        footer {
+            background: rgba(0, 0, 0, 0.8);
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        /* Media Query for Mobile Devices */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2.5em;
+            }
+
+            nav a {
+                font-size: 1em;
+                margin: 0 15px;
+            }
+
+            main {
+                width: 90%;
+                padding: 30px;
+            }
+
+            .dashboard-buttons {
+                flex-direction: column;
+            }
+
+            .dashboard-buttons a {
+                margin-bottom: 15px;
+            }
+        }
+    </style>
 </head>
 <body>
+
     <header>
         <h1>Library Management System</h1>
     </header>
-    <nav>
-        <a href="/add_book">Add Book</a>
-        <a href="/remove_book">Remove Book</a>
-        <a href="/manage_users">Manage Users</a>
-        <a href="/list_books">List Books</a>
-        <a href="/logout">Logout</a>
-    </nav>
+
+    
+
     <main>
         <h1>Welcome, {{ name }}</h1>
-        <p>Manage your library efficiently with the available tools.</p>
+        <p>Manage your library efficiently with the available tools. Use the options below to manage books, users, and more.</p>
+
+        <!-- Buttons for Different Actions -->
+        <div class="dashboard-buttons">
+            <a href="/add_book">Add New Book</a>
+            <a href="/remove_book">Remove Book</a>
+            <a href="/manage_users">Manage Users</a>
+            <a href="/list_books">View All Books</a>
+        </div>
     </main>
+
     <footer>
         <p>© 2024 Library Management System</p>
     </footer>
+
 </body>
 </html>
