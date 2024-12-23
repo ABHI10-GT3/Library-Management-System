@@ -5,6 +5,96 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Library Management System - Home</title>
     <link rel="stylesheet" href="/static/css/style.css">
+    <style>
+        /* Reset some default styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            background: url('/static/images/library-bg.png') no-repeat center center/cover;
+            background-attachment: fixed;
+            color: white;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        header {
+            background: rgba(0, 0, 0, 0.6); /* Semi-transparent black background */
+            padding: 30px 0;
+            text-align: center;
+            width: 100%;
+        }
+
+        header h1 {
+            font-size: 4em;
+            color: #fff;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 20px;
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin: 0 20px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.3em;
+            font-weight: bold;
+        }
+
+        nav ul li a:hover {
+            text-decoration: underline;
+        }
+
+        .intro {
+            padding: 50px 20px;
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+            background: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+            border-radius: 10px;
+        }
+
+        .intro h2 {
+            font-size: 3em;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            font-weight: bold;
+            letter-spacing: 1px;
+            color: beige;
+        }
+
+        .intro p {
+            font-size: 1.2em;
+            line-height: 1.8;
+            color: #ddd;
+        }
+
+        footer {
+            background: rgba(0, 0, 0, 0.6);
+            color: white;
+            text-align: center;
+            padding: 15px 0;
+            width: 100%;
+            position: fixed;
+            bottom: 0;
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -20,7 +110,7 @@
     <section class="intro">
         <h2>About Our System</h2>
         <p>
-            The Library Management System allows librarians to manage books, users, and handle overdue notifications. Users can search for, borrow, and return books easily.
+            The Library Management System allows librarians to manage books, users, and handle overdue notifications. Users can search for, borrow, and return books easily, making the library experience smooth and efficient for all.
         </p>
     </section>
 
