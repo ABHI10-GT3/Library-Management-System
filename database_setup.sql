@@ -91,7 +91,6 @@ INSERT INTO borrowed_books (user_id, book_id, borrow_date, due_date, status) VAL
 (1, 1, '2024-12-10', '2024-12-24', 'borrowed'),
 (2, 2, '2024-12-05', '2024-12-19', 'borrowed'),
 (3, 3, '2024-12-01', '2024-12-15', 'returned'),
-(4, 4, 4, '2024-12-02', '2024-12-16', 'borrowed'),
 (5, 5, '2024-12-03', '2024-12-17', 'borrowed');
 
 -- Sample Overdue Notifications

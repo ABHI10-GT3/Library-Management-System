@@ -176,7 +176,7 @@ def user_login():
 
         if user and user[3] == password:
             session['user_id'] = user[0]
-            flash('Logged in successfully!', 'success')
+            # flash('Logged in successfully!', 'success')
             return redirect('/user_dashboard')
         else:
             flash('Invalid credentials!', 'danger')
@@ -275,7 +275,7 @@ def register():
                     (name, email, hashed_password))
         mysql.connection.commit()
         cur.close()
-        flash('Registration successful! Please log in.', 'success')
+        # flash('Registration successful! Please log in.', 'success')
         return redirect('/user_login')
 
     return render_template('register.html')
@@ -312,7 +312,7 @@ def return_book():
                 """, [book_id])
 
                 mysql.connection.commit()
-                flash('Book returned successfully!', 'success')
+                # flash('Book returned successfully!', 'success')
             else:
                 flash('Invalid book return request or book is already returned.', 'danger')
 
@@ -338,7 +338,7 @@ def return_book():
 @app.route('/logout')
 def logout():
     session.clear()
-    flash('Logged out successfully!', 'info')
+    # flash('Logged out successfully!', 'info')
     return redirect('/')
 
 if __name__ == "__main__":

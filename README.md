@@ -95,7 +95,7 @@ The **Library Management System** is a web-based application designed to make li
      ```
    - Run the SQL schema file provided in the project root directory to initialize the database:
      ```bash
-     mysql -u your_username -p library_db < database_setup.sql
+     mysql -u your_username -p < database_setup.sql
      ```
 
 7. **Run the application**:
