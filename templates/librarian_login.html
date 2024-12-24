@@ -5,12 +5,146 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Librarian Login</title>
     <link rel="stylesheet" href="/static/css/style.css">
+    <style>
+        /* Reset some default styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: url('/static/images/librarian-bg.png') no-repeat center center/cover;
+            background-attachment: fixed;
+            color: white;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            background-color: #2d2d2d; /* Dark background to make the text stand out */
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+            background-color: rgba(0, 0, 0, 0.6); /* Slight dark overlay for header */
+            padding: 20px 0;
+            border-radius: 10px;
+        }
+
+        header h1 {
+            font-size: 3em;
+            font-weight: bold;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: #f9d342; /* Soft golden yellow for a warm, welcoming feel */
+            margin-bottom: 20px;
+        }
+
+        .login-form {
+            background: rgba(0, 0, 0, 0.7); /* Slightly darker background for form */
+            padding: 30px;
+            border-radius: 10px;
+            width: 100%;
+            max-width: 400px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .login-form h2 {
+            font-size: 2.2em;
+            text-align: center;
+            margin-bottom: 20px;
+            color: #f9d342; /* Warm yellow for header */
+        }
+
+        .login-form label {
+            font-size: 1.1em;
+            margin-bottom: 8px;
+            color: #000000; /* Soft white for label text */
+            display: block;
+        }
+
+        .login-form input {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 15px;
+            border: 1px solid #f9d342; /* Yellow border for input fields */
+            border-radius: 5px;
+            font-size: 1.1em;
+            background: #fff; /* Light background for the input fields */
+        }
+
+        .login-form input:focus {
+            border-color: #f39c12; /* Slightly darker yellow for focus */
+            outline: none;
+        }
+
+        .login-form button {
+            background: #f9d342; /* Soft gold for buttons */
+            color: rgb(0, 0, 0);
+            padding: 14px;
+            border: none;
+            width: 100%;
+            font-size: 1.2em;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .login-form button:hover {
+            background: #f39c12; /* Darker gold on hover */
+        }
+
+        .login-form p {
+            text-align: center;
+            color: #ddd;
+            margin-top: 15px;
+        }
+
+        .login-form a {
+            color: #f9d342; /* Same soft gold for links */
+            text-decoration: none;
+        }
+
+        .login-form a:hover {
+            text-decoration: underline;
+            color: #f39c12; /* Darker gold for hover effect */
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 30px;
+            color: #fff;
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2.2em;
+            }
+
+            .login-form {
+                padding: 20px;
+                max-width: 350px;
+            }
+
+            .login-form h2 {
+                font-size: 1.8em;
+            }
+
+            .login-form button {
+                font-size: 1.1em;
+            }
+        }
+    </style>
 </head>
 <body>
+
     <header>
         <h1>Library Management System</h1>
     </header>
-    
+
     <div class="login-form">
         <h2>Librarian Login</h2>
         <form action="/librarian_login" method="POST">
@@ -24,9 +158,10 @@
         </form>
         <p>Don't have an account? <a href="/register">Register here</a></p>
     </div>
-    
+
     <footer>
         <p>&copy; 2024 Library Management System</p>
     </footer>
+
 </body>
 </html>
