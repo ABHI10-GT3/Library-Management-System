@@ -7,10 +7,10 @@ The **Library Management System** is a web-based application designed to make li
 
 ## Team Members
 - **Abhishek H** - Project Head [https://github.com/ABHI10-GT3]
-- **Harshita Purohit** - Feature Implementation [
+- **Harshita Purohit** - Feature Implementation [https://github.com/purohitharshita]
 - **Ifrah Naaz** - Feature Implementation [https://github.com/ifrahnz26]
-- **Joshua** - Reviewer [
-- **Nandita Nayak** - Documentation Head [
+- **Joshua** - Reviewer [https://github.com/Joshualeo257]
+- **Nandita Nayak** - Documentation Head [https://github.com/NanditaNayakk]
 
 ---
 
@@ -133,15 +133,6 @@ library-management-system/
 
 ---
 
-## Team Members
-- **Abhishek H** - Project Head [https://github.com/ABHI10-GT3]
-- **Harshita Purohit** - Feature Implementation [https://github.com/purohitharshita]
-- **Ifrah Naaz** - Feature Implementation [https://github.com/ifrahnz26]
-- **Joshua** - Reviewer 
-- **Nandita Nayak** - Documentation Head 
-
----
-
 ## Contributing
 We welcome contributions! Please refer to the `CONTRIBUTING.md` file for detailed guidelines.
 
@@ -151,7 +142,3 @@ We welcome contributions! Please refer to the `CONTRIBUTING.md` file for detaile
 This project is licensed under the MIT License.
 
 ---
-
-## Contact
-For any issues or suggestions, feel free to reach out:
-- **Email**: [ifrahnaaz64@gmail.com]
