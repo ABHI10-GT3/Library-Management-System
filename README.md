@@ -5,7 +5,7 @@ The **Library Management System** is a web-based application designed to make li
 
 ---
 
-## Team Members
+## Team Members - Team 7
 - **Abhishek Hosmani** - Project Head [https://github.com/ABHI10-GT3]
 - **Harshita Purohit** - Feature Implementation [https://github.com/purohitharshita]
 - **Ifrah Naaz** - Feature Implementation [https://github.com/ifrahnz26]
