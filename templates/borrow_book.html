@@ -5,8 +5,142 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Borrow Book</title>
     <link rel="stylesheet" href="/static/css/style.css">
+    <style>
+        /* Reset default styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: url('/static/images/end.png') no-repeat center center/cover, 
+                        linear-gradient(135deg, #6e7c9f, #4b5563); /* Background image and gradient */
+            background-attachment: fixed;
+            color: white;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            background-color: #2d2d2d; /* fallback dark background */
+        }
+
+        h1 {
+            font-size: 3.5em;
+            font-weight: bold;
+            color: #f9d342; /* Soft golden yellow for title */
+            margin-bottom: 30px;
+            text-align: center;
+            animation: fadeIn 1s ease-in-out; /* Animation for the title */
+        }
+
+        .form-container {
+            background: rgba(0, 0, 0, 0.6); /* Dark form background */
+            padding: 40px;
+            border-radius: 15px;
+            width: 100%;
+            max-width: 500px;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+            animation: slideIn 1s ease-out; /* Animation for the form */
+        }
+
+        .form-container label {
+            font-size: 1.2em;
+            color: #000000;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .form-container select,
+        .form-container input {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 20px;
+            border: 1px solid #f9d342;
+            border-radius: 5px;
+            background: #fff;
+            font-size: 1.1em;
+            color: #333;
+            background-position: right 10px center;
+            background-repeat: no-repeat;
+        }
+
+        .form-container input {
+            background-image: url('/static/images/calendar-icon.png'); /* Calendar icon for date input */
+            background-position: right 10px center;
+            background-repeat: no-repeat;
+        }
+
+        .form-container select:focus,
+        .form-container input:focus {
+            border-color: #f39c12; /* Focus effect */
+            outline: none;
+        }
+
+        .form-container button {
+            background: linear-gradient(135deg, #f9d342, #f39c12); /* Gradient button */
+            color: rgb(0, 0, 0);
+            padding: 15px;
+            border: none;
+            width: 100%;
+            font-size: 1.3em;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .form-container button:hover {
+            background: linear-gradient(135deg, #f39c12, #e67e22); /* Darker gradient on hover */
+        }
+
+        .back-link {
+            display: block;
+            text-align: center;
+            color: #ddd;
+            margin-top: 20px;
+        }
+
+        .back-link a {
+            color: #000000;
+            text-decoration: none;
+        }
+
+        .back-link a:hover {
+            text-decoration: underline;
+        }
+
+        /* Keyframe Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes slideIn {
+            from { transform: translateY(-20px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        /* Responsive design for smaller screens */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5em;
+            }
+
+            .form-container {
+                padding: 20px;
+                max-width: 400px;
+            }
+
+            .form-container button {
+                font-size: 1.2em;
+            }
+        }
+    </style>
 </head>
 <body>
+
     <h1>Borrow a Book</h1>
     
     {% with messages = get_flashed_messages(with_categories=true) %}
@@ -19,23 +153,25 @@
         {% endif %}
     {% endwith %}
 
-    <form method="POST">
-        <label for="book_id">Select Book:</label>
-        <select name="book_id" id="book_id" required>
-            {% for book in books %}
-                <option value="{{ book[0] }}">{{ book[1] }} by {{ book[2] }}</option>
-            {% endfor %}
-        </select>
-        <br>
+    <div class="form-container">
+        <form method="POST">
+            <label for="book_id">Select Book:</label>
+            <select name="book_id" id="book_id" required>
+                {% for book in books %}
+                    <option value="{{ book[0] }}">{{ book[1] }} by {{ book[2] }}</option>
+                {% endfor %}
+            </select>
 
-        <label for="due_date">Due Date:</label>
-        <input type="date" name="due_date" id="due_date" required>
-        <br>
+            <label for="due_date">Due Date:</label>
+            <input type="date" name="due_date" id="due_date" required>
 
-        <button type="submit">Borrow Book</button>
-    </form>
+            <button type="submit">Borrow Book</button>
+        </form>
+    </div>
 
-    <br>
-    <a href="/user_dashboard">Back to Dashboard</a>
+    <div class="back-link">
+        <a href="/user_dashboard">Back to Dashboard</a>
+    </div>
+
 </body>
 </html>
